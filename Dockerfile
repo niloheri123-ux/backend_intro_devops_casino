@@ -12,6 +12,6 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/src ./src
 COPY package.json ./
 RUN addgroup -S app && adduser -S app -G app
-USER app
+USER node
 EXPOSE 3000
 CMD ["node", "src/server.js"]
